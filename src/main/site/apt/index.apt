@@ -1,0 +1,31 @@
+ ------
+ Introduction
+ ------
+ Philippe Marschall
+ ------
+ 2020-05-05
+ ------
+
+Skinny WAR Maven Plugin
+
+The Skinny WAR Maven Plugin repackages the WAR files in an EAR file into {{{https://maven.apache.org/plugins/maven-ear-plugin/examples/skinny-wars.html}skinny WARs}}.
+
+ When no configuration values are set, the plugin sets default values.
+
+* Goals Overview
+
+   The truststore Plugin has only one goal:
+
+   * {{{./repackage-mojo.html}skinny-war-maven-plugin:repackage}} repackages the WARs in an EAR into skinny WARs.
+
+   []
+
+* Usage
+
+  General instructions on how to use the Skinny WAR Maven Plugin can be found on the {{{./usage.html}usage page}}.
+
+  If you feel like the plugin is missing a feature or has a defect, you can fill a feature request or bug report in our
+  {{{https://github.com/marschall/skinny-war-maven-plugin/issues}issue tracker}} or submit a
+  {{{https://github.com/marschall/skinny-war-maven-plugin/pulls}pull request}}.
+
+   []

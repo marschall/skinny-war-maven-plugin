@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.9</version>
+  </skin>
+
+  <body>
+    <menu name="Overview">
+      <item name="Introduction" href="index.html"/>
+      <item name="Goals" href="plugin-info.html"/>
+      <item name="Usage" href="usage.html"/>
+    </menu>
+    <menu name="Project Information">
+      <item name="Source" href="scm.html"/>
+      <item name="Issue Tracking" href="issue-management.html"/>
+      <item name="License" href="licenses.html"/>
+    </menu>
+    
+  </body>
+</project>

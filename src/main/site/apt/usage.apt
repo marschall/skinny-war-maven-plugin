@@ -1,0 +1,52 @@
+ ------
+ Usage
+ ------
+ Philippe Marschall
+ ------
+ 2018-07-28
+ ------
+
+Usage
+
+  Some brief examples on how to use this plugin.
+
+* How to build a skinny WAR
+
+  When you want to create a a skinny WAR with Maven, you have to run the <<<skinny-war-maven-plugin>>> after the <<<maven-ear-plugin>>>:
+
++----------+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-ear-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.github.marschall</groupId>
+        <artifactId>skinny-war-maven-plugin</artifactId>
+        <version>1.0.0</version>
+        <executions>
+          <execution>
+            <id>repackage</id>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
++----------+
+
+  Now we can create a skinny WAR by using the command below:
+
++-----------------+
+mvn package
++-----------------+
+
+  The 'package' phase is always responsible for bundling all the files in the artifact, in this case a skinny WAR.
+
+  In your project's <<<target>>> directory you'll see the generated .ear file as well as the repackaged .ear file with skinny WARs.
+
+  For full documentation, click {{{./plugin-info.html}here}}.
