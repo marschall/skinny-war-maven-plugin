@@ -126,7 +126,7 @@ public class SkinnyWarMojo extends AbstractMojo {
             if (Files.exists(targetFile)) {
               Files.delete(jar);
             } else {
-              Files.move(jar, lib, COPY_ATTRIBUTES);
+              Files.move(jar, targetFile, COPY_ATTRIBUTES);
             }
           }
         }
