@@ -1,7 +1,7 @@
 Skinny WAR Maven Plugin
 =======================
 
-The truststore Maven plugin gives you an easy way to build [skinny WARs](https://maven.apache.org/plugins/maven-ear-plugin/examples/skinny-wars.html).
+This Maven plugin gives you an easy way to build [skinny WARs](https://maven.apache.org/plugins/maven-ear-plugin/examples/skinny-wars.html).
 
 Usage
 -----

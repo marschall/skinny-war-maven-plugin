@@ -1,4 +1,4 @@
-package com.github.marschall.truststoremavenplugin;
+package com.github.marschall.skinnywarmavenplugin;
 
 import static java.nio.file.FileVisitResult.CONTINUE;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;

@@ -14,7 +14,7 @@ The Skinny WAR Maven Plugin repackages the WAR files in an EAR file into {{{http
 
 * Goals Overview
 
-   The truststore Plugin has only one goal:
+   The Skinny WAR Maven Plugin has only one goal:
 
    * {{{./repackage-mojo.html}skinny-war-maven-plugin:repackage}} repackages the WARs in an EAR into skinny WARs.
 
