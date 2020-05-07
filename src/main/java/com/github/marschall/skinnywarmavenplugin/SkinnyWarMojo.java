@@ -33,10 +33,10 @@ import org.apache.maven.project.MavenProject;
  * <a href="https://maven.apache.org/plugins/maven-ear-plugin/examples/skinny-wars.html">skinny WARs</a>.
  */
 @Mojo(
-  name = "repackage",
-  defaultPhase = LifecyclePhase.PACKAGE,
-  requiresProject = true,
-  threadSafe = true)
+    name = "repackage",
+    defaultPhase = LifecyclePhase.PACKAGE,
+    requiresProject = true,
+    threadSafe = true)
 public class SkinnyWarMojo extends AbstractMojo {
 
 
@@ -58,8 +58,19 @@ public class SkinnyWarMojo extends AbstractMojo {
   @Parameter(defaultValue = "${project.build.finalName}", readonly = true)
   private String finalName;
 
+  /**
+   * Skip the execution.
+   */
+  @Parameter(property = "skinny-war.repackage.skip", defaultValue = "false")
+  private boolean skip;
+
   @Override
   public void execute() throws MojoExecutionException, MojoFailureException {
+    if (this.skip) {
+      getLog().info("skipping plugin execution");
+      return;
+    }
+
     Artifact sourceArtifact = this.getSourceArtifact();
 
     File repackaged;
