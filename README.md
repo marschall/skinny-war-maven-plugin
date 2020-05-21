@@ -28,7 +28,7 @@ Simply run the `skinny-war-maven-plugin` after the `maven-ear-plugin`
       <plugin>
         <groupId>com.github.marschall</groupId>
         <artifactId>skinny-war-maven-plugin</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <executions>
           <execution>
             <id>repackage</id>

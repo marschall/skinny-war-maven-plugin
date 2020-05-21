@@ -39,7 +39,6 @@ import org.apache.maven.project.MavenProject;
   threadSafe = true)
 public class SkinnyWarMojo extends AbstractMojo {
 
-
   /**
    * The Maven project.
    */
@@ -58,8 +57,19 @@ public class SkinnyWarMojo extends AbstractMojo {
   @Parameter(defaultValue = "${project.build.finalName}", readonly = true)
   private String finalName;
 
+  /**
+   * Skip the execution.
+   */
+  @Parameter(property = "skinny-war.repackage.skip", defaultValue = "false")
+  private boolean skip;
+
   @Override
   public void execute() throws MojoExecutionException, MojoFailureException {
+    if (this.skip) {
+      this.getLog().info("skipping plugin execution");
+      return;
+    }
+
     Artifact sourceArtifact = this.getSourceArtifact();
 
     File repackaged;
