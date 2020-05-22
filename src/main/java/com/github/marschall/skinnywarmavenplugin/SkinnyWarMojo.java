@@ -91,7 +91,7 @@ public class SkinnyWarMojo extends AbstractMojo {
       unzip(file.toPath(), tempDirectory);
       processWarFiles(tempDirectory);
 
-      File repackaged = new File(this.outputDirectory, this.finalName + "-repackaged.ear");
+      File repackaged = new File(this.outputDirectory, this.finalName + "-skinny.ear");
       zip(tempDirectory, repackaged.toPath());
       return repackaged;
     } finally {
@@ -108,7 +108,9 @@ public class SkinnyWarMojo extends AbstractMojo {
    */
   private static void processWarFiles(Path earFolder) throws IOException {
     Path lib = earFolder.resolve("lib");
-    Files.createDirectory(lib);
+    if (!Files.exists(lib)) {
+      Files.createDirectory(lib);
+    }
     try (DirectoryStream<Path> wars = Files.newDirectoryStream(earFolder, "*.war")) {
       for (Path war : wars) {
         if (Files.isRegularFile(war)) {
