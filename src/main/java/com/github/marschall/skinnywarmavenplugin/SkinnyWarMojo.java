@@ -39,7 +39,6 @@ import org.apache.maven.project.MavenProject;
     threadSafe = true)
 public class SkinnyWarMojo extends AbstractMojo {
 
-
   /**
    * The Maven project.
    */
@@ -67,7 +66,7 @@ public class SkinnyWarMojo extends AbstractMojo {
   @Override
   public void execute() throws MojoExecutionException, MojoFailureException {
     if (this.skip) {
-      getLog().info("skipping plugin execution");
+      this.getLog().info("skipping plugin execution");
       return;
     }
 

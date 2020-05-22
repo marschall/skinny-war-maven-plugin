@@ -3,7 +3,7 @@
 
   <groupId>com.github.marschall</groupId>
   <artifactId>skinny-war-maven-plugin</artifactId>
-  <version>1.0.3-SNAPSHOT</version>
+  <version>1.0.4-SNAPSHOT</version>
   <inceptionYear>2020</inceptionYear>
   <url>https://github.com/marschall/skinny-war-maven-plugin/</url>
   <packaging>maven-plugin</packaging>
