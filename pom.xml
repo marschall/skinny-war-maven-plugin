@@ -366,7 +366,7 @@
   <properties>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <maven.version>3.6.3</maven.version>
+    <maven.version>3.8.1</maven.version>
     <maven.plugin.version>3.6.0</maven.plugin.version>
   </properties>
 
