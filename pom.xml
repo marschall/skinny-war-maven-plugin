@@ -98,6 +98,37 @@
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <release>8</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <configuration>
+          <flattenMode>ossrh</flattenMode>
+        </configuration>
+        <executions>
+          <!-- enable flattening -->
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <!-- ensure proper cleanup -->
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <artifactId>maven-plugin-plugin</artifactId>
         <configuration>
           <!-- see http://jira.codehaus.org/browse/MNG-5346 -->
@@ -120,13 +151,6 @@
         </executions>
       </plugin>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
         <artifactId>maven-source-plugin</artifactId>
         <executions>
           <execution>
@@ -140,6 +164,7 @@
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
+          <release>8</release>
           <links>
             <link>https://docs.oracle.com/javase/8/docs/api/</link>
             <link>https://maven.apache.org/ref/${maven.version}/maven-plugin-api/apidocs/</link>
@@ -147,6 +172,7 @@
             <link>https://maven.apache.org/ref/${maven.version}/maven-model/apidocs/</link>
             <link>https://maven.apache.org/ref/${maven.version}/maven-core/apidocs/</link>
           </links>
+          <notimestamp>true</notimestamp>
         </configuration>
         <executions>
           <execution>
@@ -164,9 +190,6 @@
           <scmBranch>gh-pages</scmBranch>
           <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
           <content>${project.reporting.outputDirectory}</content>
-          <!-- 
-          <content>${project.build.directory}/site</content>
-           -->
         </configuration>
         <executions>
           <execution>
@@ -189,9 +212,6 @@
         <configuration>
           <mavenExecutorId>forked-path</mavenExecutorId>
           <arguments>-Pdeploy-to-sonatype-oss</arguments>
-          <!-- causes the tag to be named -SNAPSHOT
-          <tag>${project.version}</tag>
-           -->
         </configuration>
       </plugin>
     </plugins>
@@ -208,6 +228,11 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>3.1.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>flatten-maven-plugin</artifactId>
+          <version>1.5.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-gpg-plugin</artifactId>
@@ -367,6 +392,7 @@
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <maven.version>3.9.5</maven.version>
     <maven.plugin.version>3.10.2</maven.plugin.version>
+    <project.build.outputTimestamp>2023-01-01T00:00:00Z</project.build.outputTimestamp>
   </properties>
 
 </project>

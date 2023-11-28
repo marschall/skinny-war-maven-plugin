@@ -1,2 +1,5 @@
 target/
+.flattened-pom.xml
+pom.xml.releaseBackup
+release.properties
 
